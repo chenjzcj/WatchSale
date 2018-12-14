@@ -1,0 +1,19 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titletv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示最新100条数据，log保存路径在SD卡的watchsales目录下"
+        android:textSize="12sp"/>
+
+    <ListView
+        android:id="@+id/lv_watchs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="2dp"/>
+</LinearLayout>
