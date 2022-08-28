@@ -18,12 +18,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MainService.ServiceNofity {
+/**
+ * @author Administrator
+ */
+public class MainActivity extends AppCompatActivity implements MainService.ServiceNotify {
 
     public static final String KEY_CREATE = "KEY_CREATE";
-    private List<Watch> watches = new ArrayList<>();
+    private final List<Watch> watches = new ArrayList<>();
     private WatchAdapter watchAdapter;
-    private ListView lvWatchs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainService.Servi
         intent.putExtra(KEY_CREATE, true);
         startService(intent);
 
-        lvWatchs = (ListView) findViewById(R.id.lv_watchs);
+        ListView lvWatchs = (ListView) findViewById(R.id.lv_watchs);
         watchAdapter = new WatchAdapter(this, watches);
         lvWatchs.setAdapter(watchAdapter);
 
@@ -112,9 +114,9 @@ public class MainActivity extends AppCompatActivity implements MainService.Servi
     @Override
     protected void onDestroy() {
         Log.w("MainActivity", "onDestroy");
-        startService(new Intent(this, MainService.class)); // 保证service能在后台运行，不被杀死
+        // 保证service能在后台运行，不被杀死
+        startService(new Intent(this, MainService.class));
         MainService.removeServiceNofity();
         super.onDestroy();
     }
-
 }

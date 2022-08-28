@@ -5,6 +5,8 @@ import android.os.Environment;
 /**
  * Created by MZIA(527633405@qq.com) on 2016/8/31 0031 11:26
  * 常量值
+ *
+ * @author Administrator
  */
 public class Constants {
 

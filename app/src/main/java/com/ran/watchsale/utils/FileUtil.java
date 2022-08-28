@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
+/**
+ * @author Administrator
+ */
 public class FileUtil {
 
     /**
@@ -50,8 +53,8 @@ public class FileUtil {
                 // 行号增加
                 i++;
             }
-
-            if (i == 0) {  // 第一次读
+            if (i == 0) {
+                // 第一次读
                 out.println(lineToBeInserted);
             }
         } catch (Exception e) {
@@ -61,7 +64,6 @@ public class FileUtil {
                 out.flush();
                 out.close();
             }
-
             if (in != null) {
                 try {
                     in.close();
@@ -69,13 +71,13 @@ public class FileUtil {
                     e.printStackTrace();
                 }
             }
-
             if (inFile != null) {
                 // 删除原始文件
                 inFile.delete();
                 // 把临时文件改名为原文件名
-                if (tempFile != null)
+                if (tempFile != null) {
                     tempFile.renameTo(inFile);
+                }
             }
         }
     }

@@ -7,6 +7,8 @@ import android.util.Log;
 
 /**
  * 开机启动监听
+ *
+ * @author Administrator
  */
 public class BootReceiver extends BroadcastReceiver {
     private static final String LOG_TAG = "BootReceiver";

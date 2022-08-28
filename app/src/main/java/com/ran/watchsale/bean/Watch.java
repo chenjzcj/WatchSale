@@ -3,12 +3,26 @@ package com.ran.watchsale.bean;
 /**
  * 作者 : 527633405@qq.com
  * 时间 : 2016/6/21 0021
+ *
+ * @author Administrator
  */
 public class Watch {
-    private long id;//服务器分配给手表的id
-    private String number;//手表中的sim卡号码
-    private String time;//手表激活时间
-    private boolean state;//手表信息上传到服务器的状态
+    /**
+     * 服务器分配给手表的id
+     */
+    private long id;
+    /**
+     * 手表中的sim卡号码
+     */
+    private String number;
+    /**
+     * 手表激活时间
+     */
+    private String time;
+    /**
+     * 手表信息上传到服务器的状态
+     */
+    private boolean state;
 
     public Watch(long id, String number, String time, boolean state) {
         this.id = id;

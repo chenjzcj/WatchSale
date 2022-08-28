@@ -18,7 +18,7 @@ import java.util.List;
 public class WatchAdapter extends BaseAdapter {
 
     private List<Watch> watches;
-    private Context context;
+    private final Context context;
 
     public WatchAdapter(Context context, List<Watch> watches) {
         this.watches = watches;
@@ -63,7 +63,7 @@ public class WatchAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    class ViewHolder {
+    static class ViewHolder {
         TextView id;
         TextView number;
         TextView date;

@@ -2,6 +2,8 @@ package com.ran.watchsale.bean;
 
 /**
  * 短信实体
+ *
+ * @author Administrator
  */
 public class SmsInfo {
 

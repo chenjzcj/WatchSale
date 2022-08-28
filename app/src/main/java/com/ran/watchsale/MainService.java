@@ -26,13 +26,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * @author Administrator
+ */
 public class MainService extends Service {
     private static final String TAG = "MainService";
     public static SmsObserver mSmsObserver;
 
-    private SimpleDateFormat mFullDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-    private HttpUtils mHttpUtils = new HttpUtils();
-    public static ServiceNofity mServiceNofity;
+    private final SimpleDateFormat mFullDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+    private final HttpUtils mHttpUtils = new HttpUtils();
+    public static ServiceNotify mServiceNofity;
 
     @Override
     public void onCreate() {
@@ -106,7 +109,7 @@ public class MainService extends Service {
         }
     }
 
-    public static void addServiceNofity(ServiceNofity serviceNofity) {
+    public static void addServiceNofity(ServiceNotify serviceNofity) {
         mServiceNofity = serviceNofity;
     }
 
@@ -141,8 +144,13 @@ public class MainService extends Service {
         startService(new Intent(this, MainService.class));
     }
 
-    public interface ServiceNofity {
+    public interface ServiceNotify {
+        /**
+         * 上传成功回调
+         *
+         * @param info SmsInfo
+         * @param text String
+         */
         void onMainServiceUploadSuccess(SmsInfo info, String text);
     }
-
 }
